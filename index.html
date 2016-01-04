@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="libs.min.js"></script>
 	<script type="text/javascript" src="candy.min.js"></script>
-	<script type="text/javascript" src="candy-plugins/namecomplete/candy.js"></script>
+	<script type="text/javascript" src="candy-plugins/namecomplete/candy.js?v=1"></script>
 	<script type="text/javascript" src="candy-plugins/inline-images/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/notifyme/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/available-rooms/candy.js"></script>
@@ -59,7 +59,7 @@
 			});
 
 			Candy.Core.connect();
-			CandyShop.NameComplete.init({completeKeyCode: '9'});
+			CandyShop.NameComplete.init();
 			CandyShop.InlineImages.initWithMaxImageSize(400);
 			CandyShop.NotifyMe.init({ playSound: false });
 			// CandyShop.AvailableRooms.init();
