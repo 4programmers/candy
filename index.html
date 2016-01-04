@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>4programmers.net chat</title>
+	<link rel="shortcut icon" href="res/img/favicon.png" type="image/gif" />
+	<link rel="stylesheet" type="text/css" href="res/default.css" />
+	<link rel="stylesheet" type="text/css" href="candy-plugins/namecomplete/candy.css" />
+	<link rel="stylesheet" type="text/css" href="candy-plugins/inline-images/candy.css" />
+	<link rel="stylesheet" type="text/css" href="candy-plugins/notifyme/candy.css" />
+	<link rel="stylesheet" type="text/css" href="candy-plugins/roomPanel/default.css" />
+
+    <style >
+        .roster-pane .user {
+            display: block !important;
+            opacity: 1 !important;
+        }
+    </style>
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="libs.min.js"></script>
+	<script type="text/javascript" src="candy.min.js"></script>
+	<script type="text/javascript" src="candy-plugins/namecomplete/candy.js"></script>
+	<script type="text/javascript" src="candy-plugins/inline-images/candy.js"></script>
+	<script type="text/javascript" src="candy-plugins/notifyme/candy.js"></script>
+	<script type="text/javascript" src="candy-plugins/available-rooms/candy.js"></script>
+	<script type="text/javascript" src="candy-plugins/roomPanel/roomPanel.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			Candy.init('http-bind/', {
+				core: {
+					debug: true,
+					autojoin: ['general@conference.4programmers.net']
+				},
+				view: { assets: 'res/' }
+			});
+
+			CandyShop.RoomPanel.init({
+			    roomList: [
+				{
+				    name: 'general',
+				    jid:  'general@conference.4programmers.net'
+				},
+				{
+				    name: 'help',
+				    jid:  'help@conference.4programmers.net'
+				}
+			    ],
+			    // show room list if all rooms are closed, default value is true. [optional]
+			    showIfAllTabClosed: true,
+			    // show '+' at the end of the room tabs
+			    showTab: true,
+			    // show icon in toolbar to show room list
+			    showToolbarIcon: false,
+			    // detect rooms before showing list, default value is true. [optional]
+			    autoDetectRooms: false,
+			    // how long in seconds before refreshing room list, default value is 600. [optional]
+			    roomCacheTime: 600
+			});
+
+			Candy.Core.connect();
+			CandyShop.NameComplete.init({completeKeyCode: '9'});
+			CandyShop.InlineImages.initWithMaxImageSize(400);
+			CandyShop.NotifyMe.init({ playSound: false });
+			// CandyShop.AvailableRooms.init();
+
+			$.get('session', function(data) {
+				var user = data.username;
+				var token = data.token;
+				if (user !== null) {
+					$("#username").attr('value', user + '@4programmers.net');
+					$("#password").attr('value', 'session!' + token);
+					$("#login-form").submit();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="candy"></div>
+</body>
+</html>
