@@ -25,6 +25,8 @@
 	<script type="text/javascript" src="candy-plugins/notifyme/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/available-rooms/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/roomPanel/roomPanel.js"></script>
+	<script type="text/javascript" src="candy-plugins/me-does/candy.js"></script>
+	<script type="text/javascript" src="custom-plugins/GiphyPlugin.js?v=8"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			Candy.init('http-bind/', {
@@ -62,6 +64,8 @@
 			CandyShop.NameComplete.init();
 			CandyShop.InlineImages.initWithMaxImageSize(400);
 			CandyShop.NotifyMe.init({ playSound: false });
+			CandyShop.MeDoes.init();
+			CandyShop.Giphy.init();
 			// CandyShop.AvailableRooms.init();
 
 			$.get('session', function(data) {
