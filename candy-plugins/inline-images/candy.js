@@ -81,6 +81,11 @@ CandyShop.InlineImages = (function(self, Candy, $) {
    *   (String)
    */
   var handleBeforeShow = function(e, args) {
+
+	if (Candy.Util.cookieExists("inline-images")) {
+	  return;
+	}
+
     args.message = replaceLinksWithLoaders(args.message);
 
     if (args.xhtmlMessage) {
@@ -142,6 +147,10 @@ CandyShop.InlineImages = (function(self, Candy, $) {
    *   (Array) args
    */
   var handleOnShow = function(e, args) {
+	if (Candy.Util.cookieExists("inline-images")) {
+	  return;
+	}
+
     $('.inlineimages-loader').each(function(index, element) {
       $(element).removeClass('inlineimages-loader');
       var url = $(element).attr('longdesc');
