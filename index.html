@@ -33,7 +33,7 @@
 		$(document).ready(function() {
 			Candy.init('http-bind/', {
 				core: {
-					debug: false,
+					debug: true,
 					autojoin: ['general@conference.4programmers.net']
 				},
 				view: { assets: 'res/' }
@@ -72,7 +72,7 @@
 			CandyShop.Settings.init();
 			// CandyShop.AvailableRooms.init();
 
-			/*$.get('session', function(data) {
+			$.get('session', function(data) {
 				var user = data.username;
 				var token = data.token;
 				if (user !== null) {
@@ -80,7 +80,7 @@
 					$("#password").attr('value', 'session!' + token);
 					$("#login-form").submit();
 				}
-			});*/
+			});
 		});
 	</script>
 </head>

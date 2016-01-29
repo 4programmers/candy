@@ -2,7 +2,7 @@ var CandyShop = (function(self) { return self; }(CandyShop || {}));
 
 /**
  * SETTINGS:
- * sound-pw - Sound on private message
+ * candy-nosound - Sound on private message
  * sound-mention - Sound when someone mention us in chat (@nickname)
  * notify-pw - Notification for private message
  * notify-mention - Notification for mention
@@ -15,6 +15,7 @@ var CandyShop = (function(self) { return self; }(CandyShop || {}));
 CandyShop.Settings = (function(self, Candy, $) {
     self.init = function(){
 		$("#chat-toolbar").append("<a href='#openModal'><li id='chat-settings-control' data-tooltip='Settings'></li></a>");
+		$("#chat-sound-control").remove();
 
 		$.ajax({
 			url: 'custom-plugins/settings/settings-body.html',
