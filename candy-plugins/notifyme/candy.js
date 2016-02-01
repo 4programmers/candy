@@ -61,7 +61,7 @@ CandyShop.NotifyMe = (function(self, Candy, $) {
 			// I wouldn't want to say 'just do @{MY_NICK} to get my attention' and have it knock...
 			if (searchRegExp.test(args.message) && args.name != _getNick()) {
 				// play the sound if specified
-				if (_options.playSound) {
+				if (_options.playSound && !Candy.Util.cookieExists("sound-mention")) {
 					Candy.View.Pane.Chat.Toolbar.playSound();
 				}
 

@@ -79,13 +79,13 @@ CandyShop.Notifications = (function(self, Candy, $) {
     // Check if window has focus, so no notification needed
     if (!document.hasFocus()) {
       if(_options.notifyNormalMessage ||
-        (self.mentionsMe(args.message) && _options.notifyMention) ||
-        (_options.notifyPersonalMessage && Candy.View.Pane.Chat.rooms[args.roomJid].type === 'chat')) {
+        (self.mentionsMe(args.message) && _options.notifyMention && !Candy.Util.cookieExists("notify-mention")) ||
+        (_options.notifyPersonalMessage && Candy.View.Pane.Chat.rooms[args.roomJid].type === 'chat')  && !Candy.Util.cookieExists("notify-pw")) {
         // Create the notification.
         var title = !_options.title ? args.name : _options.title ,
           notification = new window.Notification(title, {
           icon: _options.icon,
-          body: args.message
+          body: args.message,
           requireInteraction: _options.requireInteraction
         });
 
