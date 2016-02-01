@@ -49,7 +49,7 @@ CandyShop.Giphy = (function(self, Candy, $) {
      */
     self.giphy = function(args) {
         args = args.replace(/\s/g, '+');
-		var url = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + args;
+		var url = 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + args;
         var result = null;
         $.ajax({
             type: 'GET',
