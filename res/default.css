@@ -730,7 +730,7 @@ ul {
 }
 
 
-.close {
+#modalClose {
 	background: #606061;
 	color: #FFFFFF;
 	line-height: 25px;
@@ -759,7 +759,7 @@ ul {
 	padding-left: 20px;
 }
 
-.close:hover { background: #00d9ff; }
+#modalClose:hover { background: #00d9ff; }
 
 .squaredFour {
 	position: relative;
