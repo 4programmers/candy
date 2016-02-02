@@ -708,10 +708,12 @@ ul {
 	-moz-transition: opacity 100ms ease-in;
 	transition: opacity 100ms ease-in;
 	pointer-events: none;
+	display: none;
 }
 
 .modalDialog:target {
-	opacity:1;
+	opacity: 1;
+	display: block;
 	pointer-events: auto;
 }
 
