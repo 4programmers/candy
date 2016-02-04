@@ -26,7 +26,7 @@ CandyShop.NotifyMe = (function(self, Candy, $) {
 	 *   (Boolean) normalizeNickname - Whether to normalize the casing of the nickname to the way you entered it.  Otherwise, leave the casing as the sender wrote it. Defaults to true
 	 */
 	var _options = {
-		nameIdentifier: '@',
+		nameIdentifier: '',
 		playSound: true,
 		highlightInRoom: true,
 		normalizeNickname: true
