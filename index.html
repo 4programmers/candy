@@ -33,7 +33,7 @@
 	<script type="text/javascript" src="custom-plugins/LinkTitle.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			Candy.init('http-bind/', {
+			Candy.init('/http-bind/', {
 				core: {
 					debug: true,
 					autojoin: ['general@conference.4programmers.net']
@@ -76,13 +76,14 @@
 			CandyShop.LinkTitle.init();
 			// CandyShop.AvailableRooms.init();
 
-			$.get('session', function(data) {
+			$.get('/session', function(data) {
 				var user = data.username;
 				var token = data.token;
 				if (user !== null) {
-					$("#username").attr('value', user + '@4programmers.net');
-					$("#password").attr('value', 'session!' + token);
-					$("#login-form").submit();
+					var jid = user + '@4programmers.net';
+					var password = 'session!' + token;
+					Candy.Core.connect(jid, password);
+
 				}
 			});
 		});
