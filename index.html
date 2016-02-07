@@ -23,14 +23,12 @@
 	<script type="text/javascript" src="candy-plugins/namecomplete/candy.js?v=1"></script>
 	<script type="text/javascript" src="candy-plugins/inline-images/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/notifyme/candy.js"></script>
-	<script type="text/javascript" src="candy-plugins/available-rooms/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/roomPanel/roomPanel.js"></script>
 	<script type="text/javascript" src="candy-plugins/me-does/candy.js"></script>
 	<script type="text/javascript" src="candy-plugins/notifications/candy.js"></script>
 	<script type="text/javascript" src="custom-plugins/GiphyPlugin.js?v=8"></script>
 	<script type="text/javascript" src="custom-plugins/settings/SettingsPlugin.js"></script>
 	<script type="text/javascript" src="custom-plugins/DisableXHTMLMessage.js"></script>
-	<script type="text/javascript" src="custom-plugins/LinkTitle.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			Candy.init('/http-bind/', {
@@ -73,8 +71,6 @@
 			CandyShop.Giphy.init();
 			CandyShop.Settings.init();
 			CandyShop.DisableXHTMLMessage.init();
-			CandyShop.LinkTitle.init();
-			// CandyShop.AvailableRooms.init();
 
 			$.get('/session', function(data) {
 				var user = data.username;
@@ -83,7 +79,6 @@
 					var jid = user + '@4programmers.net';
 					var password = 'session!' + token;
 					Candy.Core.connect(jid, password);
-
 				}
 			});
 		});
@@ -93,3 +88,4 @@
 	<div id="candy"></div>
 </body>
 </html>
+

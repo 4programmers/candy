@@ -29,7 +29,7 @@ CandyShop.NotifyMe = (function(self, Candy, $) {
 		nameIdentifier: '',
 		playSound: true,
 		highlightInRoom: true,
-		normalizeNickname: true
+		normalizeNickname: false
 	};
 
 	var _getNick = function() {
