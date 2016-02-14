@@ -24,7 +24,6 @@ CandyShop.UnreadMessagesLine = (function(self, Candy, $) {
 
 		$(document).focusin(function(e) {
 			self.wasFocusOnUnread = true;
-			console.log("focus");
 		});
     };
 
