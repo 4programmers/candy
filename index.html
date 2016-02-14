@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="custom-plugins/GiphyPlugin.js?v=8"></script>
 	<script type="text/javascript" src="custom-plugins/settings/SettingsPlugin.js"></script>
 	<script type="text/javascript" src="custom-plugins/DisableXHTMLMessage.js"></script>
+	<script type="text/javascript" src="custom-plugins/UnreadMessagesLine.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			Candy.init('/http-bind/', {
@@ -71,6 +72,7 @@
 			CandyShop.Giphy.init();
 			CandyShop.Settings.init();
 			CandyShop.DisableXHTMLMessage.init();
+			CandyShop.UnreadMessagesLine.init();
 
 			$.get('/session', function(data) {
 				var user = data.username;

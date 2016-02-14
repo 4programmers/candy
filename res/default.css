@@ -323,6 +323,10 @@ ul {
 	box-shadow: 0 1px 0 0 white;
 }
 
+ul.message-pane li.unread {
+	border-bottom-color: #aa0000;
+}
+
 .message-pane small {
 	display: none;
 	color: #a00;
