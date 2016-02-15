@@ -165,7 +165,8 @@ CandyShop.InlineImages = (function(self, Candy, $) {
           var height = Math.round(ratio * origHeight);
         }
 
-        $(element).replaceWith(buildImageSource(url, width, height))
+        $(element).replaceWith(buildImageSource(url, width, height));
+		Candy.View.Pane.Room.scrollToBottom(Candy.View.getCurrent().roomJid);
       });
 
       imageLoader.src = url;
