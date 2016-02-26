@@ -324,7 +324,7 @@ ul {
 }
 
 ul.message-pane li.unread {
-	border-bottom-color: #aa0000;
+	border-bottom-color: #aaa;
 }
 
 .message-pane small {
